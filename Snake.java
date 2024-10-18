@@ -67,11 +67,11 @@ public class Snake {
 		int[][] grid = new int[size][size];
 
 		for (Coordinate c : snake) {
-			grid[c.x][c.y] = 1;
+			grid[c.y][c.x] = 1;
 		}
 
-		grid[snake.getLast().x][snake.getLast().y] = 2;
-		grid[apple.x][apple.y] = 3;
+		grid[snake.getLast().y][snake.getLast().x] = 2;
+		grid[apple.y][apple.x] = 3;
 
 		return grid;
 	}

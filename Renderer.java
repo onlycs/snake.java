@@ -38,7 +38,7 @@ public class Renderer extends JPanel implements KeyListener {
 
 		for (int row = 0; row < board[0].length; row++) {
 			for (int col = 0; col < board.length; col++) {
-				switch (board[col][row]) {
+				switch (board[row][col]) {
 					case 1 -> g.setColor(Color.LIGHT_GRAY);
 					case 2 -> g.setColor(Color.WHITE);
 					case 3 -> g.setColor(Color.RED);
