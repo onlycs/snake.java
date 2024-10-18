@@ -1,4 +1,5 @@
 import java.util.ArrayDeque;
+import java.util.Optional;
 
 public class Snake {
 	public final int size = 30;
@@ -25,13 +26,16 @@ public class Snake {
 		} while (snake.contains(apple));
 	}
 
-	public boolean addKeypress(int direction) {
-		if ((this.direction + direction) % 2 == 0) {
-			return false;
+	int getLastDir() {
+		return Optional.ofNullable(dirqueue.peekLast()).orElse(this.direction);
+	}
+
+	public void addKeypress(int direction) {
+		if ((getLastDir() + direction) % 2 == 0 || dirqueue.size() >= 3) {
+			return;
 		}
 
 		dirqueue.add(direction);
-		return true;
 	}
 
 	public void tick() {
