@@ -82,7 +82,7 @@ public class Renderer extends JPanel implements KeyListener {
 	@Override
 	public void keyReleased(KeyEvent e) {}
 
-	public static void main(String[] args) {
+	public static void start() {
 		JFrame frame = new JFrame("Snake");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(new Renderer());
